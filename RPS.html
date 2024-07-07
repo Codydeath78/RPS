@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FREAK.COM</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+ 
+ //let sum = (a,b) => a + b;
+
+ //alert(sum(1,2));
+
+ /*
+ let double = n => n *2;
+
+ alert(double(3));
+  
+let sayHi = () => alert("Hello!");
+
+sayHi();
+
+
+let age = prompt("What is your age?", 18);
+
+let welcome = (age < 18) ?
+    () => alert("Hello!"):
+    () => alert("greetings!");
+
+
+welcome();
+
+
+let sum = (a,b) => {
+  let result = a+b;
+  return result;
+};
+
+alert(sum(1,2));
+
+//number 1
+let add7 = x => x+7;
+alert(add7(7));
+
+//number 2
+let multiply = (x,y) => x*y;
+alert(multiply(10,10));
+
+
+//number 3
+function capitalize(string)
+{
+  if (typeof string != "string")
+  {
+    return '';
+  }
+return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+
+function middle(string)
+{
+
+if (typeof string != "string")
+{
+return '';
+}
+
+return string.charAt(0) + string.charAt(1).toUpperCase() + string.charAt(2); 
+
+}
+
+console.log(middle("hhh"));
+
+
+
+console.log(capitalize("hello"));
+
+function lastLetter(string)
+{
+if(typeof string != "string")
+{
+return '';
+}
+return string.charAt(string.length-1);
+}
+
+console.log(lastLetter("abcd"));
+
+
+let answer = parseInt(prompt("Please enter the number you would like to use: "));
+
+for (let i =1; i<= answer; i++)
+{
+
+if(i % 3 === 0 && i % 5 === 0 )
+{
+console.log("Fizzbuzz");
+}
+else if(i % 3 === 0)
+{
+  console.log("Fizz");
+}
+
+else if (i % 5 === 0 ) 
+{
+console.log("Buzz");
+}
+
+else
+{
+  console.log(i);
+}
+
+}
+*/
+
+humanScore =0;
+computerScore = 0;
+
+
+function getComputerChoice()
+{
+let choices = ["rock", "paper", "sciss"];
+let random_Index = Math.floor(Math.random() * 3);
+return choices[random_Index];
+}
+
+function getHumanChoice(choice) 
+{
+let validChoices = ["rock", "paper", "sciss"];
+let userChoice = prompt("What's your decision? (rock, paper, sciss):").toLowerCase();
+
+while(!validChoices.includes(userChoice))
+{
+alert("Invalid choice. It must be rock, paper, or sciss.");
+userChoice = prompt("Enter your choice (rock, paper, sciss):").toLowerCase();
+}
+return userChoice;
+}
+
+function playRound(humanChoice, computerChoice)
+{
+
+
+
+if(humanChoice === "rock" && computerChoice === "sciss")
+{
+    console.log("Human wins! rock beats sciss!");
+    humanScore++;
+}
+
+
+else if(humanChoice === "rock" && computerChoice === "paper")
+{
+    console.log("Computer wins! paper beats rock!");
+    computerScore++;
+}
+
+else if(humanChoice === "paper" && computerChoice === "sciss")
+{
+    console.log("Computer wins! sciss beats paper!");
+    computerScore++;
+}
+
+else if(humanChoice === "paper" && computerChoice === "rock")
+{
+    console.log("Human wins! paper beats rock!");
+    humanScore++;
+}
+
+else if(humanChoice === "sciss" && computerChoice === "rock")
+{
+    console.log("Computer wins! rock beats sciss!");
+    computerScore++;
+}
+
+else if(humanChoice === "sciss" && computerChoice === "paper")
+{
+    console.log("Human wins! sciss beats paper!");
+    humanScore++;
+}
+
+
+/////////////////////////////////////////////////
+
+
+
+else if(computerChoice === "rock" && humanChoice === "sciss")
+{
+    console.log("Computer wins! rock beats sciss!");
+    computerScore++;
+}
+
+else if(computerChoice === "rock" && humanChoice === "paper")
+{
+    console.log("Human wins! paper beats rock!");
+    humanScore++;
+}
+
+else if(computerChoice === "paper" && humanChoice === "sciss")
+{
+    console.log("Human wins! sciss beats paper!");
+    humanScore++;
+}
+
+else if(computerChoice === "paper" && humanChoice === "rock")
+{
+    console.log("Computer wins! paper beats rock!");
+    computerScore++;
+}
+
+else if(computerChoice === "sciss" && humanChoice === "rock")
+{
+    console.log("Human wins! rock beats sciss!");
+    humanScore++;
+}
+
+else if (computerChoice === "sciss" && humanChoice === "paper")
+{
+    console.log("Computer wins! sciss beats paper!");
+    computerScore++;
+}
+
+
+
+
+
+//////////////////////////////////////////////////////////////////
+else if(humanChoice === "rock" && computerChoice === "rock")
+{
+    console.log("DRAW! TRY AGAIN!");
+}
+
+else if(humanChoice === "paper" && computerChoice === "paper")
+{
+    console.log("DRAW! TRY AGAIN!");
+}
+
+else if(humanChoice === "sciss" && computerChoice === "sciss")
+{
+    console.log("DRAW! TRY AGAIN!");
+}
+//////////////////////////////////////////////////////////////////
+
+}
+
+function playGame()
+{
+//let humanScore =0;
+//let computerScore = 0;
+
+for (let i = 0; i<5; i++)
+{
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+}
+
+if (humanScore || computerScore === 0){
+    console.log("OUT OF 5 GAMES, NO ONE WINS!")
+}
+
+else if(humanScore > computerScore)
+{
+console.log("OUT OF 5 GAMES, HUMAN WINS!")
+}
+else if (humanScore < computerScore){
+console.log("OUT OF 5 GAMES, COMPUTER WINS!")
+}
+
+}
+
+console.log(playGame());
+
+
+
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
+
+//playRound(humanSelection, computerSelection);
+
+
+
+
+
+
+//console.log(getComputerChoice("rock"));
+//console.log(getHumanChoice("rock"));
+
+
+
+
+</script>
+</body>
+</html>
